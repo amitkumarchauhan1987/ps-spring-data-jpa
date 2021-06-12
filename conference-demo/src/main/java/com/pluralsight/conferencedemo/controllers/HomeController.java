@@ -18,7 +18,7 @@ public class HomeController {
     @RequestMapping("/")
     public Map getStatus() {
         Map map = new HashMap<String, String>();
-        map.put("app-version", appVersion);
+        map.put("app-version-kaka4", appVersion);
         return map;
     }
 

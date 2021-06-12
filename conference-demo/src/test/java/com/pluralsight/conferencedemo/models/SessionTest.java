@@ -1,15 +1,15 @@
 package com.pluralsight.conferencedemo.models;
 
 import com.pluralsight.conferencedemo.repositories.SessionRepository;
-import org.junit.Test;
-//import org.junit.jupiter.api.Test;
+//import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.util.List;
 
-import static org.junit.Assert.assertTrue;
-//import static org.junit.jupiter.api.Assertions.assertTrue;
+//import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
 public class SessionTest {
