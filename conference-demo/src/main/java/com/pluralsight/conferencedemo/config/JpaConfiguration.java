@@ -1,8 +1,5 @@
 package com.pluralsight.conferencedemo.config;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.hibernate.dialect.PostgreSQL95Dialect;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,6 +12,8 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 
 import javax.sql.DataSource;
+import java.util.HashMap;
+import java.util.Map;
 
 @Configuration
 public class JpaConfiguration {
@@ -24,10 +23,11 @@ public class JpaConfiguration {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
 		dataSource.setDriverClassName("org.postgresql.Driver");
-		dataSource.setUrl("jdbc:postgresql:conference_app");
-		dataSource.setUsername("root");
-		dataSource.setPassword("");
-
+//		dataSource.setUrl("jdbc:postgresql:conference_app");
+		dataSource.setUrl("jdbc:postgresql://localhost:5432/conference_app");
+		dataSource.setUsername("postgres");
+		dataSource.setPassword("Welcome");
+		System.out.println("HELLO Mr KALA BHALOO");
 		return dataSource;
 	}
 
@@ -50,7 +50,7 @@ public class JpaConfiguration {
 
 	@Bean
 	public PlatformTransactionManager transactionManager() {
-		return new JpaTransactionManager( entityManagerFactory().getObject() );
+		return new JpaTransactionManager((javax.persistence.EntityManagerFactory)entityManagerFactory().getObject());
 	}
 
 	@Bean
